@@ -1,34 +1,34 @@
 matriz = [[0, 0, 0], [0, 0, 0], [0, 0, 0]]
 
-pares = soma3j = maior = 0
+pares = soma3coluna = maior = 0
 
-for i in range(0, 3):
+for linha in range(0, 3):
 
-    for j in range(0, 3):
-        matriz[i][j] = int(input(f'Digite um valor para [{i}, {j}]: '))
+    for coluna in range(0, 3):
+        matriz[linha][coluna] = int(input(f'Digite um valor para [{linha}, {coluna}]: '))
 
-        if i == 1 and j == 0:
-            maior = matriz[i][j]
+        if linha == 1 and coluna == 0:
+            maior = matriz[linha][coluna]
 
 print('~~' * 20)
 
-for i in range(0, 3):
+for linha in range(0, 3):
 
-    for j in range(0, 3):
-        print(f'[{matriz[i][j]:^4}]', end=' ')
+    for coluna in range(0, 3):
+        print(f'[{matriz[linha][coluna]:^4}]', end=' ')
 
-        if matriz[i][j] % 2 == 0:
-            pares += matriz[i][j]
+        if matriz[linha][coluna] % 2 == 0:
+            pares += matriz[linha][coluna]
 
-        if matriz[1][j] > maior:
-            maior = matriz[1][j]
+        if matriz[1][coluna] > maior:
+            maior = matriz[1][coluna]
 
     print()
 
-    soma3j += matriz[i][2]
+    soma3coluna += matriz[linha][2]
 
 print(f'A soma de todos os valores pares é {pares}!')
 
-print(f'A soma dos valores da terceira coluna é {soma3j}!')
+print(f'A soma dos valores da terceira coluna é {soma3coluna}!')
 
 print(f'O maior número da segunda linha é {maior}!')
